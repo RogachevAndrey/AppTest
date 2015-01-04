@@ -18,7 +18,9 @@ public class TestDrawableView extends SurfaceView implements SurfaceHolder.Callb
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawColor(155);
+
+
+        canvas.drawColor(165);
         canvas.clipRect(0, 0, 400, 400);
     }
 
