@@ -43,6 +43,8 @@ public class MainActivity extends Activity {
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(1);
 
+
+
                 if (event.getAction() == MotionEvent.ACTION_DOWN)
                     paint.setColor(Color.WHITE);
 
