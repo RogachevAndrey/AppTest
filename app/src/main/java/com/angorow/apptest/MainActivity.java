@@ -43,12 +43,11 @@ public class MainActivity extends Activity {
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(1);
 
-                if(event.getAction()==MotionEvent.ACTION_DOWN)
-                paint.setColor(Color.WHITE);
+                if (event.getAction() == MotionEvent.ACTION_DOWN)
+                    paint.setColor(Color.WHITE);
 
 
-
-                if(event.getAction()==MotionEvent.ACTION_UP)
+                if (event.getAction() == MotionEvent.ACTION_UP)
                     paint.setColor(Color.BLUE);
 
                 canvas1.drawRect(r, paint);
