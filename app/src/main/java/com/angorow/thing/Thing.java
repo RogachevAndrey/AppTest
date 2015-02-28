@@ -4,25 +4,35 @@ package com.angorow.thing;
  * Created by Alyaska on 28.02.2015.
  */
 
-import android.graphics.Rect;
+import android.graphics.Region;
 
-public abstract class Thing {
+import java.util.EventListener;
+import java.util.Observable;
 
-    private Rect _bounds;
+public abstract class Thing extends Observable {
 
-    protected Thing(Rect bounds) throws Exception {
+    public EventListener ChangeBounds;
+    private Region _bounds;
+    private String _name;
 
-        if (bounds == null) throw new Exception();
+    protected Thing(Region bounds, String name) {
 
+        if (bounds == null) throw new NullPointerException("");
+        if (name == null) throw new NullPointerException();
+
+        _name = name;
         _bounds = bounds;
     }
 
-    public Rect get_bounds() {
+    public Region get_bounds() {
         return _bounds;
     }
 
-    public void set_bounds(Rect _bounds) {
+    public void set_bounds(Region _bounds) {
+
         this._bounds = _bounds;
+
+        ChangeBounds.notifyAll();
     }
 
 }
