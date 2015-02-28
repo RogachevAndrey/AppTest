@@ -6,19 +6,17 @@ package com.angorow.thing;
 
 import android.graphics.Region;
 
-import java.util.EventListener;
 import java.util.Observable;
 
 public abstract class Thing extends Observable {
 
-    public EventListener ChangeBounds;
     private Region _bounds;
     private String _name;
 
     protected Thing(Region bounds, String name) {
 
         if (bounds == null) throw new NullPointerException("");
-        if (name == null) throw new NullPointerException();
+        if (name == null) throw new NullPointerException("");
 
         _name = name;
         _bounds = bounds;
@@ -31,8 +29,14 @@ public abstract class Thing extends Observable {
     public void set_bounds(Region _bounds) {
 
         this._bounds = _bounds;
-
-        ChangeBounds.notifyAll();
+        Notify();
     }
 
+    public String get_name() {
+        return _name;
+    }
+
+    private void Notify() {
+        this.notifyObservers(this);
+    }
 }
