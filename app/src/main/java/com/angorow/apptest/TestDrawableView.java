@@ -1,41 +1,65 @@
 package com.angorow.apptest;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Canvas;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
 /**
  * Created by Alyaska on 02.01.2015.
  */
-public class TestDrawableView extends SurfaceView implements SurfaceHolder.Callback {
+public class TestDrawableView extends View {
+    Paint paint;
+    Drawable drawable;
+    Drawable bground;
+    Rect r;
 
     public TestDrawableView(Context context) {
         super(context);
+
+        paint = new Paint();
+        Resources resources = getResources();
+
+        drawable = resources.getDrawable(R.drawable.ic_launcher);
+        bground = resources.getDrawable(R.drawable.test);
+
+        bground.setBounds(0, 0, 1000, 1000);
+        r = new Rect(0, 0, 100, 100);
+        drawable.setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        r.offsetTo((int) MainActivity._x, (int) MainActivity._y);
+        paint.setColor(150);
+//                canvas1.drawColor(150);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1);
+//
+        paint.setColor(Color.GREEN);
+//
+//                if (event.getAction() == MotionEvent.ACTION_DOWN)
+//                    paint.setColor(Color.WHITE);
+//
+//
+//                if (event.getAction() == MotionEvent.ACTION_UP)
+//                    paint.setColor(Color.BLUE);
+//
+//                if (event.getAction() == MotionEvent.ACTION_MOVE)
+//                    paint.setColor(Color.GREEN);
+
+        drawable.setBounds(r);
+        canvas.drawRect(r, paint);
 
 
-        canvas.drawColor(165);
-        canvas.clipRect(0, 0, 400, 400);
-    }
-
-    @Override
-    public void surfaceCreated(SurfaceHolder holder) {
-
-    }
-
-    @Override
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
-    }
-
-    @Override
-    public void surfaceDestroyed(SurfaceHolder holder) {
-
+        drawable.draw(canvas);
+        bground.draw(canvas);
     }
 }
