@@ -12,4 +12,9 @@ public abstract class TimeShiftStrategy extends ExecStrategy {
     protected TimeShiftStrategy(Float multiplier) {
         _multiplier = multiplier;
     }
+
+    @Override
+    public Boolean get_canExec() {
+        return null;
+    }
 }
