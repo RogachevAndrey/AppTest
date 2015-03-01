@@ -14,7 +14,8 @@ public abstract class Function {
     }
 
     void Exec() {
-        OnExec(_thing);
+        if (_execStrategy.get_canExec())
+            OnExec(_thing);
     }
 
     protected abstract void OnExec(Thing thing);
