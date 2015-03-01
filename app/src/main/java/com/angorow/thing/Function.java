@@ -13,7 +13,7 @@ public abstract class Function {
         _execStrategy = execStrategy;
     }
 
-    public void Exec() {
+    void Exec() {
         OnExec(_thing);
     }
 
