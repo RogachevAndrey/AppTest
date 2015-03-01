@@ -5,7 +5,7 @@ import com.angorow.thing.Function;
 import com.angorow.thing.Thing;
 
 /**
- * Created by Alyaska on 01.03.2015.
+ * Created by Andrey Rogachev on 01.03.2015.
  */
 public class CicleMove extends Function {
 

@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by Alyaska on 28.02.2015.
+ * Created by Andrey Rogachev on 28.02.2015.
  */
 public abstract class World {
 

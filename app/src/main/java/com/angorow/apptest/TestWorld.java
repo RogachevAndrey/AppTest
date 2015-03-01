@@ -3,7 +3,7 @@ package com.angorow.apptest;
 import com.angorow.thing.World;
 
 /**
- * Created by Alyaska on 01.03.2015.
+ * Created by Andrey Rogachev on 01.03.2015.
  */
 public class TestWorld extends World {
 

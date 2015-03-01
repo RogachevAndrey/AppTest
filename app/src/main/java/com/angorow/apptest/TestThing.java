@@ -8,7 +8,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by Alyaska on 01.03.2015.
+ * Created by Andrey Rogachev on 01.03.2015.
  */
 public class TestThing extends Thing {
 

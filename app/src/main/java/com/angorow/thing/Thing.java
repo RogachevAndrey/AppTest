@@ -1,7 +1,7 @@
 package com.angorow.thing;
 
 /**
- * Created by angorow on 28.02.2015.
+ * Created by Andrey Rogachev on 28.02.2015.
  * Abstraction for all world objects
  */
 
