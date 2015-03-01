@@ -5,12 +5,17 @@ package com.angorow.thing;
  */
 public abstract class Function {
 
-    protected Function() {
+    private Thing _thing;
+    private ExecStrategy _execStrategy;
+
+    protected Function(Thing thing, ExecStrategy execStrategy) {
+        _thing = thing;
+        _execStrategy = execStrategy;
     }
 
     public void Exec() {
-        OnExec();
+        OnExec(_thing);
     }
 
-    protected abstract void OnExec();
+    protected abstract void OnExec(Thing thing);
 }
