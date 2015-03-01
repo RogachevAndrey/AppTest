@@ -1,8 +1,8 @@
 package com.angorow.apptest;
 
-import com.angorow.thing.ExecStrategy;
-import com.angorow.thing.Function;
-import com.angorow.thing.Thing;
+import com.angorow.thing.core.ExecStrategy;
+import com.angorow.thing.core.Function;
+import com.angorow.thing.core.Thing;
 
 /**
  * Created by Andrey Rogachev on 01.03.2015.

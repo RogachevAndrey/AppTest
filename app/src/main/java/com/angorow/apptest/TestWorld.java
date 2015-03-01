@@ -1,6 +1,6 @@
 package com.angorow.apptest;
 
-import com.angorow.thing.World;
+import com.angorow.thing.core.World;
 
 /**
  * Created by Andrey Rogachev on 01.03.2015.

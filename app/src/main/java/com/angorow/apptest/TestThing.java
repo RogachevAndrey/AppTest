@@ -2,7 +2,7 @@ package com.angorow.apptest;
 
 import android.graphics.Path;
 
-import com.angorow.thing.Thing;
+import com.angorow.thing.core.Thing;
 
 import java.util.Timer;
 import java.util.TimerTask;

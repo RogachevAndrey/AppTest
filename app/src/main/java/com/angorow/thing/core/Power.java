@@ -1,4 +1,4 @@
-package com.angorow.thing;
+package com.angorow.thing.core;
 
 /**
  * Created by Andrey Rogachev on 01.03.2015.

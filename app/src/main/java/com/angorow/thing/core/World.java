@@ -1,4 +1,4 @@
-package com.angorow.thing;
+package com.angorow.thing.core;
 
 import java.util.HashSet;
 import java.util.Set;
