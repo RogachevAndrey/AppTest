@@ -12,4 +12,9 @@ public abstract class TimePointsStrategy extends ExecStrategy {
     protected TimePointsStrategy(int[] delays) {
         _delays = delays;
     }
+
+    @Override
+    public Boolean get_canExec() {
+        return null;
+    }
 }

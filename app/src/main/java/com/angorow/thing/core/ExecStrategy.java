@@ -8,5 +8,5 @@ public abstract class ExecStrategy {
     protected ExecStrategy() {
     }
 
-    abstract Boolean get_canExec();
+    public abstract Boolean get_canExec();
 }
