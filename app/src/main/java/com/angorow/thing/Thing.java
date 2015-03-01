@@ -4,16 +4,17 @@ package com.angorow.thing;
  * Created by Alyaska on 28.02.2015.
  */
 
+import android.graphics.Path;
 import android.graphics.Region;
 
 import java.util.Observable;
 
 public abstract class Thing extends Observable {
 
-    private Region _bounds;
+    private Path _bounds;
     private String _name;
 
-    protected Thing(Region bounds, String name) {
+    protected Thing(Path bounds, String name) {
 
         if (bounds == null) throw new NullPointerException("");
         if (name == null) throw new NullPointerException("");
@@ -22,11 +23,11 @@ public abstract class Thing extends Observable {
         _bounds = bounds;
     }
 
-    public Region get_bounds() {
+    public Path get_bounds() {
         return _bounds;
     }
 
-    public void set_bounds(Region _bounds) {
+    public void set_bounds(Path _bounds) {
 
         this._bounds = _bounds;
         Notify();
