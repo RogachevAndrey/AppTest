@@ -74,6 +74,6 @@ public abstract class Thing extends Observable {
     }
 
     public void set_Location(int x, int y) {
-
+        _bounds.offset(x, y);
     }
 }
