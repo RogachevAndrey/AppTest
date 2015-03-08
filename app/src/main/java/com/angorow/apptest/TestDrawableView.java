@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 
 import com.angorow.thing.core.Thing;
+import com.angorow.thing.strategy.FilmFpsStrategy;
 
 import java.util.Set;
 
@@ -26,7 +27,11 @@ public class TestDrawableView extends View {
     public TestDrawableView(Context context) {
         super(context);
 
-        TestWorld.instance().AddThing(TestThing.CreateTrianglePrimitive());
+        TestThing thing = TestThing.CreateTrianglePrimitive();
+        TestWorld.instance().AddThing(thing);
+        CircleMove function = new CircleMove(thing, new FilmFpsStrategy(), 200);
+        TestWorld.instance().RegisterFunction(function);
+
         TestWorld.instance().AddThing(TestThing.CreateTrianglePrimitive());
         TestWorld.instance().AddThing(TestThing.CreateTrianglePrimitive());
         paint = new Paint();

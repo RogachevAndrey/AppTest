@@ -52,9 +52,9 @@ public class TestThing extends Thing {
     }
 
     private void _Move() {
-        Path bounds = this.get_bounds();
-
-        bounds.offset((int) ((Math.random() - .5) * 10), (int) ((Math.random() - .5) * 10));
+//        Path bounds = this.get_bounds();
+//
+//        bounds.offset((int) ((Math.random() - .5) * 10), (int) ((Math.random() - .5) * 10));
 
         //set_bounds(bounds);
     }

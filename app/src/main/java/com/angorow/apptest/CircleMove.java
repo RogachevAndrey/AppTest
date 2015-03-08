@@ -28,6 +28,6 @@ public class CircleMove extends Function {
         _x = (int) (Math.sin(thing.get_Location().x + 0.01) * _radius);
         _y = (int) (Math.cos(thing.get_Location().x + 0.01) * _radius);
 
-        thing.set_Location(_x,_y);
+        thing.set_Location((int) (_y + y_Offset), (int) (_x + x_Offset));
     }
 }
