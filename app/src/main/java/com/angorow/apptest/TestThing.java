@@ -31,14 +31,16 @@ public class TestThing extends Thing {
         Path path = new Path();
 
         int x, y;
-
         int a = 0;
+
         path.moveTo((int) (Math.random() * Math.random() * 100), (int) (Math.random() * Math.random() * 100));
+
         while (a < 10) {
 
             path.lineTo((int) (Math.random() * Math.random() * 100), (int) (Math.random() * Math.random() * 100));
             a++;
         }
+
         path.close();
 
         x = (int) (Math.random() * 100);
@@ -54,6 +56,6 @@ public class TestThing extends Thing {
 
         bounds.offset((int) ((Math.random() - .5) * 10), (int) ((Math.random() - .5) * 10));
 
-        set_bounds(bounds);
+        //set_bounds(bounds);
     }
 }

@@ -1,0 +1,15 @@
+package com.angorow.thing.strategy;
+
+/**
+ * Created by Andrey Rogachev on 08.03.2015.
+ */
+public abstract class FilmFpsStrategy extends TimeShiftStrategy {
+    ///////////////////////////////////////////////////////////////////////////
+    public static Double FILM_FPS = 41.6;
+
+    ///////////////////////////////////////////////////////////////////////////
+    @Override
+    protected Double get_nextDelay() {
+        return FILM_FPS;
+    }
+}

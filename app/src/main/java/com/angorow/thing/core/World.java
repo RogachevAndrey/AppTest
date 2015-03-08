@@ -1,5 +1,7 @@
 package com.angorow.thing.core;
 
+import junit.framework.Assert;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,6 +18,9 @@ public abstract class World {
     }
 
     public void AddThing(Thing thing) {
+
+        Assert.assertNotNull(thing);
+        
         _thingSet.add(thing);
     }
 
