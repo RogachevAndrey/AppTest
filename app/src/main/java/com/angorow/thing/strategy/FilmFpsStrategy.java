@@ -5,7 +5,7 @@ package com.angorow.thing.strategy;
  */
 public class FilmFpsStrategy extends TimeShiftStrategy {
     ///////////////////////////////////////////////////////////////////////////
-    public static Double FILM_FPS = 41.6;
+    public static Double FILM_FPS = 1.0;//41.6;
 
     ///////////////////////////////////////////////////////////////////////////
     @Override

@@ -25,7 +25,7 @@ public abstract class World {
             public void run() {
                 OnTick();
             }
-        }, 0, 100);
+        }, 0, 1);
     }
 
     protected void OnTick() {

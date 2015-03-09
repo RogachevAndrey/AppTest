@@ -20,7 +20,7 @@ public abstract class TimeShiftStrategy extends ExecStrategy {
     @Override
     public final Boolean get_canExec() {
 
-        Boolean _flag = _tickCounter == 0;
+        Boolean _flag = _tickCounter <= 0;
 
         if (_flag) _tickCounter = get_nextDelay();
 

@@ -17,11 +17,13 @@ public class CircleMove extends Function {
     protected CircleMove(Thing thing, ExecStrategy execStrategy, int radius) {
         super(thing, execStrategy);
 
-        this._radius = radius;
-        _x = (int) (Math.sin(_period) * _radius);
-        _y = (int) (Math.cos(_period) * _radius);
+        _period = 0.01;
+        _radius = radius;
 
-        _period = 0.0;
+        _x = (int) (Math.sin(_period) * _radius) + 500;
+        _y = (int) (Math.cos(_period) * _radius) + 500;
+
+
     }
 
     @Override
@@ -29,14 +31,14 @@ public class CircleMove extends Function {
 
         if (_period > 6.27) _period = 0.0;
         else
-            _period = +0.01;
+            _period += 0.01;
 
-        int x_Offset = _x - (int) (Math.sin(_period) * _radius);
-        int y_Offset = _y - (int) (Math.cos(_period) * _radius);
+        int x_Offset = _x - ((int) (Math.sin(_period) * _radius) + 500);
+        int y_Offset = _y - ((int) (Math.cos(_period) * _radius) + 500);
 
-        _x = (int) (Math.sin(_period) * _radius);
-        _y = (int) (Math.cos(_period) * _radius);
+        _x = (int) (Math.sin(_period) * _radius) + 500;
+        _y = (int) (Math.cos(_period) * _radius) + 500;
 
-        thing.set_Location( x_Offset, y_Offset);
+        thing.set_Location(x_Offset, y_Offset);
     }
 }

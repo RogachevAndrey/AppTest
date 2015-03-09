@@ -12,18 +12,8 @@ import java.util.TimerTask;
  */
 public class TestThing extends Thing {
 
-    private Timer timer;
-
     protected TestThing(Path bounds, String name) {
         super(bounds, name);
-
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                _Move();
-            }
-        }, 0, 1);
     }
 
     public static TestThing CreateTrianglePrimitive() {
@@ -33,18 +23,18 @@ public class TestThing extends Thing {
         int x, y;
         int a = 0;
 
-        path.moveTo((int) (Math.random() * Math.random() * 100), (int) (Math.random() * Math.random() * 100));
+        path.moveTo((int) (Math.random() * Math.random() * 200)+500, (int) (Math.random() * Math.random() * 200)+500);
 
         while (a < 10) {
 
-            path.lineTo((int) (Math.random() * Math.random() * 100), (int) (Math.random() * Math.random() * 100));
+            path.lineTo((int) (Math.random() * Math.random() * 200)+500, (int) (Math.random() * Math.random() * 200)+500);
             a++;
         }
 
         path.close();
 
-        x = (int) (Math.random() * 100);
-        y = (int) (Math.random() * 100);
+        x = (int) (Math.random() * 200);
+        y = (int) (Math.random() * 200);
 
         //path.addRect(x, y, 100 + x, 100 + y, Path.Direction.CW);
 

@@ -7,23 +7,25 @@ import com.angorow.thing.strategy.TimeShiftStrategy;
  */
 public class SinTimeShiftStrategy extends TimeShiftStrategy {
     private final Double _step;
+    private int multiplier;
     ///////////////////////////////////////////////////////////////////////////
     private Double _period;
 
     ///////////////////////////////////////////////////////////////////////////
     ///0.00 => period <= 6.28
     ///////////////////////////////////////////////////////////////////////////
-    public SinTimeShiftStrategy(Double period, Double step) {
+    public SinTimeShiftStrategy(Double period, Double step, int multiplier) {
 
         this._period = period;
         this._step = step;
+        this.multiplier = multiplier;
     }
 
     ///////////////////////////////////////////////////////////////////////////
     ///Default
     ///////////////////////////////////////////////////////////////////////////
     public static SinTimeShiftStrategy Create() {
-        return new SinTimeShiftStrategy(0.0, 0.1);
+        return new SinTimeShiftStrategy(0.0, 0.1, 10);
     }
 
     @Override
@@ -34,6 +36,6 @@ public class SinTimeShiftStrategy extends TimeShiftStrategy {
         else
             _period = +_step;
 
-        return sin;
+        return sin * multiplier;
     }
 }

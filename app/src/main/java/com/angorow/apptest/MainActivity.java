@@ -7,12 +7,17 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class MainActivity extends Activity {
 
     //private SurfaceHolder holder;
     public static float _x;
     public static float _y;
+    private Timer timer;
+    private TimerTask task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +72,17 @@ public class MainActivity extends Activity {
         };
 
         view.setOnTouchListener(touchListener);
+
+//        timer = new Timer();
+//
+//        task = new TimerTask() {
+//            @Override
+//            public void run() {
+//                if (view.isEnabled())
+//                    view.invalidate();
+//            }
+//        };
+//        timer.scheduleAtFixedRate(task, 0, 100);
     }
 
 
