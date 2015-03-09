@@ -3,10 +3,7 @@ package com.angorow.thing.core;
 /**
  * Created by Andrey Rogachev on 01.03.2015.
  */
-public abstract class ExecStrategy {
+public interface ExecStrategy {
 
-    protected ExecStrategy() {
-    }
-
-    public abstract Boolean get_canExec();
+     public abstract Boolean get_canExec();
 }
