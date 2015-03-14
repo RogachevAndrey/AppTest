@@ -2,8 +2,11 @@ package com.angorow.apptest;
 
 import com.angorow.thing.core.World;
 
-/**
- * Created by Andrey Rogachev on 01.03.2015.
+/***************************************************
+ * Created by Andrey Rogachev on 01.03.2015 0:21.
+ ***************************************************
+ ***************************************************
+ ***************************************************
  */
 public class TestWorld extends World {
 

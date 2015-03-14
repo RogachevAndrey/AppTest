@@ -20,8 +20,8 @@ public class CircleMove extends Function {
         _period = 0.01;
         _radius = radius;
 
-        _x = (int) (Math.sin(_period) * _radius) + 500;
-        _y = (int) (Math.cos(_period) * _radius) + 500;
+        _x = (int) (Math.sin(_period) * _radius);
+        _y = (int) (Math.cos(_period) * _radius);
 
 
     }
@@ -33,11 +33,11 @@ public class CircleMove extends Function {
         else
             _period += 0.01;
 
-        int x_Offset = _x - ((int) (Math.sin(_period) * _radius) + 500);
-        int y_Offset = _y - ((int) (Math.cos(_period) * _radius) + 500);
+        int x_Offset = _x - ((int) (Math.sin(_period) * _radius));
+        int y_Offset = _y - ((int) (Math.cos(_period) * _radius));
 
-        _x = (int) (Math.sin(_period) * _radius) + 500;
-        _y = (int) (Math.cos(_period) * _radius) + 500;
+        _x = (int) (Math.sin(_period) * _radius);
+        _y = (int) (Math.cos(_period) * _radius);
 
         thing.set_Location(x_Offset, y_Offset);
     }

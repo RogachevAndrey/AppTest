@@ -11,7 +11,12 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 
 import com.angorow.thing.core.Thing;
+import com.angorow.thing.preset.SinTimeShiftStrategy;
+import com.angorow.thing.strategy.FilmFpsStrategy;
 import com.angorow.thing.strategy.TimePointsStrategy;
+import com.angorow.thing.strategy.TimeShiftStrategy;
+
+import junit.framework.Assert;
 
 import java.util.Set;
 
@@ -27,22 +32,6 @@ public class TestDrawableView extends View {
     public TestDrawableView(Context context) {
         super(context);
 
-        int a;
-        for (a = 0; a < 15; a = a + 1)
-
-        {
-//            TestThing thing = TestThing.CreateTrianglePrimitive();
-//            TestWorld.instance().AddThing(thing);
-//            CircleMove function = new CircleMove(thing, new SinTimeShiftStrategy((Math.random() + 0.1) * 0.628, (Math.random() + 0.1) * 10, 100), 10 * (a + 1));
-//            TestWorld.instance().RegisterFunction(function);
-
-            TestThing thing = TestThing.CreateTrianglePrimitive();
-            TestWorld.instance().AddThing(thing);
-            CircleMove function = new CircleMove(thing, TimePointsStrategy.createToSpeedStrategy(), a * 20);
-            TestWorld.instance().RegisterFunction(function);
-        }
-
-
         paint = new Paint();
         Resources resources = getResources();
 
@@ -56,7 +45,7 @@ public class TestDrawableView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+
 
         Set<Thing> thingSet = TestWorld.instance().get_thingSet();
 
@@ -90,6 +79,6 @@ public class TestDrawableView extends View {
 
 
         drawable.draw(canvas);
-        //bground.draw(canvas);
+        //bground.draw(canvas);super.onDraw(canvas);
     }
 }

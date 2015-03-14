@@ -2,8 +2,11 @@ package com.angorow.thing.strategy;
 
 import junit.framework.Assert;
 
-/**
- * Created by Andrey Rogachev on 01.03.2015.
+/***************************************************
+ * Created by Andrey Rogachev on 01.03.2015 19:22 19:23 19:24 19:25.
+ ***************************************************
+ ***************************************************
+ ***************************************************
  */
 public class TimePointsStrategy extends TimeShiftStrategy {
     ///////////////////////////////////////////////////////////////////////////
@@ -26,7 +29,7 @@ public class TimePointsStrategy extends TimeShiftStrategy {
         for (int index = 0; index < 10; index++) {
             int d = index+1;
             d *= 10;
-            timePoints[index] = Double.valueOf(d);
+            timePoints[index] = (double) d;
         }
 
         return new TimePointsStrategy(timePoints);

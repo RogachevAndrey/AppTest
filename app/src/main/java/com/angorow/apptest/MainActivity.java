@@ -7,6 +7,9 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.angorow.thing.preset.SinTimeShiftStrategy;
+import com.angorow.thing.strategy.FilmFpsStrategy;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -18,16 +21,33 @@ public class MainActivity extends Activity {
     public static float _y;
     private Timer timer;
     private TimerTask task;
+    private View.OnTouchListener touchListener;
+
+    private void PrepareWorld() {
+        int a;
+        for (a = 1; a < 15; a = a + 1)
+
+        {
+            TestThing thing = TestThing.CreateTrianglePrimitive();
+            TestWorld.instance().AddThing(thing);
+
+            int radius = a * 20;
+
+            CircleMove function = new CircleMove(thing, new FilmFpsStrategy(), radius);
+            TestWorld.instance().RegisterFunction(function);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        PrepareWorld();
         //final SurfaceView view = new SurfaceView(this);
-        final TestDrawableView view = new TestDrawableView(this);
-        setContentView(view);
+        //final TestDrawableView view = new TestDrawableView(this);
+        //setContentView(view);
 
-        View.OnTouchListener touchListener = new View.OnTouchListener() {
+        touchListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 //
@@ -65,13 +85,19 @@ public class MainActivity extends Activity {
                 _x = event.getX();
                 _y = event.getY();
 
-                view.invalidate();
+                TestThing thing = TestThing.CreateTrianglePrimitive();
+
+                thing.set_Location((int) _x, (int) _y);
+                TestWorld.instance().AddThing(thing);
+                TestWorld.instance().RegisterFunction(new CircleMove(thing, SinTimeShiftStrategy.Create(), 200));
+
+                //view.invalidate();
                 return true;
             }
 //
         };
 
-        view.setOnTouchListener(touchListener);
+        //view.setOnTouchListener(touchListener);
 
 //        timer = new Timer();
 //

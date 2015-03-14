@@ -17,15 +17,15 @@ public abstract class World {
     private Set<Function> _functionSet;
 
     protected World() {
-        _thingSet = new HashSet<Thing>();
-        _functionSet = new HashSet<Function>();
+        _thingSet = new HashSet<>();
+        _functionSet = new HashSet<>();
         _timer = new Timer();
         _timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 OnTick();
             }
-        }, 0, 1);
+        }, 0, 100);
     }
 
     protected void OnTick() {

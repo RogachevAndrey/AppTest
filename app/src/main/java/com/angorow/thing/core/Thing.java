@@ -49,7 +49,8 @@ public abstract class Thing extends Observable {
     }
 
     private void Notify() {
-        this.notifyObservers(this);
+        if (this.countObservers() > 0)
+            this.notifyObservers(this);
     }
 
     /**

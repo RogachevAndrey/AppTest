@@ -7,8 +7,11 @@ import com.angorow.thing.core.Thing;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * Created by Andrey Rogachev on 01.03.2015.
+/***************************************************
+ * Created by Andrey Rogachev on 01.03.2015 19:25.
+ ***************************************************
+ ***************************************************
+ ***************************************************
  */
 public class TestThing extends Thing {
 
